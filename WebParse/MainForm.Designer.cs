@@ -29,13 +29,6 @@
         private void InitializeComponent()
         {
             this.dvg_Filmler = new System.Windows.Forms.DataGridView();
-            this.pbx_Poster = new System.Windows.Forms.PictureBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.filmlerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.türlerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fimEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txt_FilmBul = new System.Windows.Forms.TextBox();
-            this.cmb_FilmBul = new System.Windows.Forms.ComboBox();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Poster = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +37,13 @@
             this.imdbId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tur = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Oyuncular = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pbx_Poster = new System.Windows.Forms.PictureBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.filmlerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.türlerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fimEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txt_FilmBul = new System.Windows.Forms.TextBox();
+            this.cmb_FilmBul = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dvg_Filmler)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_Poster)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -73,65 +73,6 @@
             this.dvg_Filmler.Size = new System.Drawing.Size(1024, 224);
             this.dvg_Filmler.TabIndex = 0;
             this.dvg_Filmler.SelectionChanged += new System.EventHandler(this.dvg_Filmler_SelectionChanged);
-            // 
-            // pbx_Poster
-            // 
-            this.pbx_Poster.Location = new System.Drawing.Point(372, 26);
-            this.pbx_Poster.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pbx_Poster.Name = "pbx_Poster";
-            this.pbx_Poster.Size = new System.Drawing.Size(221, 128);
-            this.pbx_Poster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbx_Poster.TabIndex = 1;
-            this.pbx_Poster.TabStop = false;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.filmlerToolStripMenuItem,
-            this.türlerToolStripMenuItem,
-            this.fimEkleToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1048, 24);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // filmlerToolStripMenuItem
-            // 
-            this.filmlerToolStripMenuItem.Name = "filmlerToolStripMenuItem";
-            this.filmlerToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
-            this.filmlerToolStripMenuItem.Text = "Oyuncular";
-            // 
-            // türlerToolStripMenuItem
-            // 
-            this.türlerToolStripMenuItem.Name = "türlerToolStripMenuItem";
-            this.türlerToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
-            this.türlerToolStripMenuItem.Text = "Türler";
-            // 
-            // fimEkleToolStripMenuItem
-            // 
-            this.fimEkleToolStripMenuItem.Name = "fimEkleToolStripMenuItem";
-            this.fimEkleToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
-            this.fimEkleToolStripMenuItem.Text = "Fim Ekle";
-            // 
-            // txt_FilmBul
-            // 
-            this.txt_FilmBul.Location = new System.Drawing.Point(12, 158);
-            this.txt_FilmBul.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_FilmBul.Name = "txt_FilmBul";
-            this.txt_FilmBul.Size = new System.Drawing.Size(304, 23);
-            this.txt_FilmBul.TabIndex = 3;
-            // 
-            // cmb_FilmBul
-            // 
-            this.cmb_FilmBul.FormattingEnabled = true;
-            this.cmb_FilmBul.Location = new System.Drawing.Point(627, 158);
-            this.cmb_FilmBul.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cmb_FilmBul.Name = "cmb_FilmBul";
-            this.cmb_FilmBul.Size = new System.Drawing.Size(306, 23);
-            this.cmb_FilmBul.TabIndex = 4;
             // 
             // ID
             // 
@@ -196,6 +137,66 @@
             this.Oyuncular.Name = "Oyuncular";
             this.Oyuncular.ReadOnly = true;
             this.Oyuncular.Width = 125;
+            // 
+            // pbx_Poster
+            // 
+            this.pbx_Poster.Location = new System.Drawing.Point(372, 26);
+            this.pbx_Poster.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbx_Poster.Name = "pbx_Poster";
+            this.pbx_Poster.Size = new System.Drawing.Size(221, 128);
+            this.pbx_Poster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbx_Poster.TabIndex = 1;
+            this.pbx_Poster.TabStop = false;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.filmlerToolStripMenuItem,
+            this.türlerToolStripMenuItem,
+            this.fimEkleToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1048, 24);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // filmlerToolStripMenuItem
+            // 
+            this.filmlerToolStripMenuItem.Name = "filmlerToolStripMenuItem";
+            this.filmlerToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
+            this.filmlerToolStripMenuItem.Text = "Oyuncular";
+            // 
+            // türlerToolStripMenuItem
+            // 
+            this.türlerToolStripMenuItem.Name = "türlerToolStripMenuItem";
+            this.türlerToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.türlerToolStripMenuItem.Text = "Türler";
+            // 
+            // fimEkleToolStripMenuItem
+            // 
+            this.fimEkleToolStripMenuItem.Name = "fimEkleToolStripMenuItem";
+            this.fimEkleToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.fimEkleToolStripMenuItem.Text = "Fim Ekle";
+            // 
+            // txt_FilmBul
+            // 
+            this.txt_FilmBul.Location = new System.Drawing.Point(12, 158);
+            this.txt_FilmBul.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_FilmBul.Name = "txt_FilmBul";
+            this.txt_FilmBul.Size = new System.Drawing.Size(304, 23);
+            this.txt_FilmBul.TabIndex = 3;
+            this.txt_FilmBul.TextChanged += new System.EventHandler(this.txt_FilmBul_TextChanged);
+            // 
+            // cmb_FilmBul
+            // 
+            this.cmb_FilmBul.FormattingEnabled = true;
+            this.cmb_FilmBul.Location = new System.Drawing.Point(627, 158);
+            this.cmb_FilmBul.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmb_FilmBul.Name = "cmb_FilmBul";
+            this.cmb_FilmBul.Size = new System.Drawing.Size(306, 23);
+            this.cmb_FilmBul.TabIndex = 4;
             // 
             // MainForm
             // 

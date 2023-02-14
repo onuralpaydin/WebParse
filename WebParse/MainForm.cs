@@ -42,7 +42,24 @@ namespace WebParse
 
         private void dvg_Filmler_SelectionChanged(object sender, EventArgs e)
         {
-            pbx_Poster.ImageLocation = (string)dvg_Filmler.SelectedRows[0].Cells[2].Value;
+            if (dvg_Filmler.SelectedRows.Count>0)
+            {
+                //pbx_Poster.Load((string)dvg_Filmler.SelectedRows[0].Cells[2].Value);
+                pbx_Poster.ImageLocation = (string)dvg_Filmler.SelectedRows[0].Cells[2].Value;
+            }
+            //pbx_Poster.ImageLocation = (string)dvg_Filmler.SelectedRows[0].Cells[2].Value;
+        }
+
+        private void txt_FilmBul_TextChanged(object sender, EventArgs e)
+        {
+            dvg_Filmler.Rows.Clear();
+            foreach (var item in db.Filmler.Include(film => film.Oyuncular).Include(film => film.Tur).Where(film=>film.Tur.Ad.Contains(txt_FilmBul.Text)))
+            {
+                var oyuncular = string.Join(',', item.Oyuncular.Select(oyuncu => oyuncu.AdSoyAd));
+                string tur = item.Tur.Ad;
+
+                dvg_Filmler.Rows.Add(item.ID, item.Ad, item.Poster, item.Yýl, item.imdbPuaný, item.imdbId, tur, oyuncular);
+            }
         }
     }
 }
