@@ -44,6 +44,7 @@
             this.fimEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txt_FilmBul = new System.Windows.Forms.TextBox();
             this.cmb_FilmBul = new System.Windows.Forms.ComboBox();
+            this.oyuncuEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dvg_Filmler)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_Poster)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -164,6 +165,8 @@
             // 
             // filmlerToolStripMenuItem
             // 
+            this.filmlerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.oyuncuEkleToolStripMenuItem});
             this.filmlerToolStripMenuItem.Name = "filmlerToolStripMenuItem";
             this.filmlerToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
             this.filmlerToolStripMenuItem.Text = "Oyuncular";
@@ -199,6 +202,13 @@
             this.cmb_FilmBul.Size = new System.Drawing.Size(306, 23);
             this.cmb_FilmBul.TabIndex = 4;
             this.cmb_FilmBul.SelectedIndexChanged += new System.EventHandler(this.cmb_FilmBul_SelectedIndexChanged);
+            // 
+            // oyuncuEkleToolStripMenuItem
+            // 
+            this.oyuncuEkleToolStripMenuItem.Name = "oyuncuEkleToolStripMenuItem";
+            this.oyuncuEkleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.oyuncuEkleToolStripMenuItem.Text = "Oyuncu Ekle";
+            this.oyuncuEkleToolStripMenuItem.Click += new System.EventHandler(this.oyuncuEkleToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -242,5 +252,6 @@
         private DataGridViewTextBoxColumn imdbId;
         private DataGridViewTextBoxColumn Tur;
         private DataGridViewTextBoxColumn Oyuncular;
+        private ToolStripMenuItem oyuncuEkleToolStripMenuItem;
     }
 }

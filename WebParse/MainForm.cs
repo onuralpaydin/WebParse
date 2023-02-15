@@ -103,7 +103,14 @@ namespace WebParse
 
         private void filmlerToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            OyuncularForm oyuncularForm = new OyuncularForm();
+            oyuncularForm.ShowDialog();
+        }
 
+        private void oyuncuEkleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OyuncuEkleForm oyuncuEkleForm = new OyuncuEkleForm();
+            oyuncuEkleForm.ShowDialog();
         }
     }
 }
