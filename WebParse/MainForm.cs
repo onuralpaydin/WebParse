@@ -47,11 +47,16 @@ namespace WebParse
             dvg_Filmler.Rows.Clear();
             foreach (var item in db.Filmler.Include(film => film.Oyuncular).Include(film => film.Tur))
             {
-                var oyuncular = string.Join(',', item.Oyuncular.Select(oyuncu => oyuncu.AdSoyAd));
-                string tur = item.Tur.Ad;
-                
-                dvg_Filmler.Rows.Add(item.ID, item.Ad, item.Poster, item.Yýl, item.imdbPuaný, item.imdbId, tur,oyuncular);
+                FilmTurOyuncuBirlestir(item);
             }
+        }
+
+        private void FilmTurOyuncuBirlestir(Film item)
+        {
+            var oyuncular = string.Join(',', item.Oyuncular.Select(oyuncu => oyuncu.AdSoyAd));
+            string tur = item.Tur.Ad;
+
+            dvg_Filmler.Rows.Add(item.ID, item.Ad, item.Poster, item.Yýl, item.imdbPuaný, item.imdbId, tur, oyuncular);
         }
 
         private void dvg_Filmler_SelectionChanged(object sender, EventArgs e)
@@ -69,10 +74,7 @@ namespace WebParse
             dvg_Filmler.Rows.Clear();
             foreach (var item in db.Filmler.Include(film => film.Oyuncular).Include(film => film.Tur).Where(film=>film.Tur.Ad.Contains(txt_FilmBul.Text)))
             {
-                var oyuncular = string.Join(',', item.Oyuncular.Select(oyuncu => oyuncu.AdSoyAd));
-                string tur = item.Tur.Ad;
-
-                dvg_Filmler.Rows.Add(item.ID, item.Ad, item.Poster, item.Yýl, item.imdbPuaný, item.imdbId, tur, oyuncular);
+                FilmTurOyuncuBirlestir(item);
             }
         }
 
@@ -87,10 +89,7 @@ namespace WebParse
                 dvg_Filmler.Rows.Clear();
                 foreach (var item in db.Filmler.Where(tur => tur.Tur.Ad == (string)cmb_FilmBul.SelectedItem).ToList())
                 {
-                    var oyuncular = string.Join(',', item.Oyuncular.Select(oyuncu => oyuncu.AdSoyAd));
-                    string tur = item.Tur.Ad;
-
-                    dvg_Filmler.Rows.Add(item.ID, item.Ad, item.Poster, item.Yýl, item.imdbPuaný, item.imdbId, tur, oyuncular);
+                    FilmTurOyuncuBirlestir(item);
                 }
                 //foreach (var item in db.Filmler.Where(tur => tur.Tur.Id == cmb_FilmBul.SelectedIndex).ToList())
                 //{
@@ -100,6 +99,11 @@ namespace WebParse
                 //    dvg_Filmler.Rows.Add(item.ID, item.Ad, item.Poster, item.Yýl, item.imdbPuaný, item.imdbId, tur, oyuncular);
                 //}
             }
+        }
+
+        private void filmlerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

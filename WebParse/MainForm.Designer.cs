@@ -167,6 +167,7 @@
             this.filmlerToolStripMenuItem.Name = "filmlerToolStripMenuItem";
             this.filmlerToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
             this.filmlerToolStripMenuItem.Text = "Oyuncular";
+            this.filmlerToolStripMenuItem.Click += new System.EventHandler(this.filmlerToolStripMenuItem_Click);
             // 
             // türlerToolStripMenuItem
             // 
