@@ -197,6 +197,7 @@
             this.cmb_FilmBul.Name = "cmb_FilmBul";
             this.cmb_FilmBul.Size = new System.Drawing.Size(306, 23);
             this.cmb_FilmBul.TabIndex = 4;
+            this.cmb_FilmBul.SelectedIndexChanged += new System.EventHandler(this.cmb_FilmBul_SelectedIndexChanged);
             // 
             // MainForm
             // 

@@ -18,6 +18,7 @@ namespace WebParse
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            CmbDoldur();
             FilmleriYukle();
             dvg_Filmler.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             pbx_Poster.ImageLocation = (string)dvg_Filmler.SelectedRows[0].Cells[2].Value;
@@ -27,9 +28,22 @@ namespace WebParse
 
         }
 
+        private void CmbDoldur()
+        {
+            cmb_FilmBul.Items.Add("Bütün Türler");
+            List<Tur> turAdlari = db.Turler.ToList();
+            turAdlari.ForEach(tur => cmb_FilmBul.Items.Add(tur.Ad));
+       
+
+            //foreach (var item in db.Turler)
+            //{
+            //    cmb_FilmBul.Items.Add(item.Ad);
+            //}
+            cmb_FilmBul.SelectedIndex = 0;
+        }
+
         private void FilmleriYukle()
         {
-            
             dvg_Filmler.Rows.Clear();
             foreach (var item in db.Filmler.Include(film => film.Oyuncular).Include(film => film.Tur))
             {
@@ -59,6 +73,32 @@ namespace WebParse
                 string tur = item.Tur.Ad;
 
                 dvg_Filmler.Rows.Add(item.ID, item.Ad, item.Poster, item.Yýl, item.imdbPuaný, item.imdbId, tur, oyuncular);
+            }
+        }
+
+        private void cmb_FilmBul_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmb_FilmBul.SelectedIndex==0)
+            {
+                FilmleriYukle();
+            }
+            else
+            {
+                dvg_Filmler.Rows.Clear();
+                foreach (var item in db.Filmler.Where(tur => tur.Tur.Ad == (string)cmb_FilmBul.SelectedItem).ToList())
+                {
+                    var oyuncular = string.Join(',', item.Oyuncular.Select(oyuncu => oyuncu.AdSoyAd));
+                    string tur = item.Tur.Ad;
+
+                    dvg_Filmler.Rows.Add(item.ID, item.Ad, item.Poster, item.Yýl, item.imdbPuaný, item.imdbId, tur, oyuncular);
+                }
+                //foreach (var item in db.Filmler.Where(tur => tur.Tur.Id == cmb_FilmBul.SelectedIndex).ToList())
+                //{
+                //    var oyuncular = string.Join(',', item.Oyuncular.Select(oyuncu => oyuncu.AdSoyAd));
+                //    string tur = item.Tur.Ad;
+
+                //    dvg_Filmler.Rows.Add(item.ID, item.Ad, item.Poster, item.Yýl, item.imdbPuaný, item.imdbId, tur, oyuncular);
+                //}
             }
         }
     }
