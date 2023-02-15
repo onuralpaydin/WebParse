@@ -24,10 +24,10 @@ namespace WebParse
 
         private void OyunculariListele()
         {
-            foreach (Oyuncu oyuncu in db.Oyuncular.Include(oyuncu => oyuncu.IletisimBilgisi))
+            foreach (Oyuncu oyuncu in db.Oyuncular.Include(oyuncu=>oyuncu.IletisimBilgisi))
             {
 
-                if (oyuncu.IletisimBilgisi!=null)
+                if (oyuncu.IletisimBilgisi != null)
                 {
                     dgvOyuncular.Rows.Add(oyuncu.Id, oyuncu.AdSoyAd, oyuncu.IletisimBilgisi.Adres, oyuncu.IletisimBilgisi.TelefonNo);
                 }
@@ -36,6 +36,13 @@ namespace WebParse
                     dgvOyuncular.Rows.Add(oyuncu.Id, oyuncu.AdSoyAd, "Adresi Yok", "Telefonu Yok");
                 }
             }
+        }
+
+        private void dgvOyuncular_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            OyuncuEkleForm oyuncuEkleForm = new OyuncuEkleForm();
+            oyuncuEkleForm.ShowDialog();
+
         }
     }
 }

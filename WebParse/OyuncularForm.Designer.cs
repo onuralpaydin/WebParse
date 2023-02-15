@@ -52,6 +52,7 @@
             this.dgvOyuncular.RowTemplate.Height = 25;
             this.dgvOyuncular.Size = new System.Drawing.Size(462, 339);
             this.dgvOyuncular.TabIndex = 0;
+            this.dgvOyuncular.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOyuncular_CellContentDoubleClick);
             // 
             // Id
             // 

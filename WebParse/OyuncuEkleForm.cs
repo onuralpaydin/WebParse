@@ -15,6 +15,7 @@ namespace WebParse
         public OyuncuEkleForm()
         {
             InitializeComponent();
+            //oyuncu crud bu sayfada.
         }
     }
 }
