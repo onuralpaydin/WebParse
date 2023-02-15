@@ -104,7 +104,8 @@ namespace WebParse
         private void filmlerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OyuncularForm oyuncularForm = new OyuncularForm();
-            oyuncularForm.ShowDialog();
+            oyuncularForm.Show();
+            this.Hide();
         }
 
     

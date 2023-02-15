@@ -41,8 +41,22 @@ namespace WebParse
         private void dgvOyuncular_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             OyuncuEkleForm oyuncuEkleForm = new OyuncuEkleForm();
-            oyuncuEkleForm.ShowDialog();
+            oyuncuEkleForm.Show();
+            this.Hide();
 
+        }
+
+        private void dgvOyuncular_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode==Keys.Delete)
+            {
+                int oyuncuIDsi = (int)dgvOyuncular.SelectedRows[0].Cells[0].Value;
+                Oyuncu bulunacakOyuncu = db.Oyuncular.Where(oyuncu => oyuncu.Id == oyuncuIDsi).FirstOrDefault();
+                db.Oyuncular.Remove(bulunacakOyuncu);
+                db.SaveChanges();
+                dgvOyuncular.Rows.Clear();
+                OyunculariListele();
+            }
         }
     }
 }

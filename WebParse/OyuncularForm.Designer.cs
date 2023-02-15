@@ -33,6 +33,7 @@
             this.AdSoyAd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Adres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOyuncular)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,6 +54,7 @@
             this.dgvOyuncular.Size = new System.Drawing.Size(462, 339);
             this.dgvOyuncular.TabIndex = 0;
             this.dgvOyuncular.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOyuncular_CellContentDoubleClick);
+            this.dgvOyuncular.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvOyuncular_KeyDown);
             // 
             // Id
             // 
@@ -78,16 +80,25 @@
             this.Telefon.Name = "Telefon";
             this.Telefon.ReadOnly = true;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(622, 167);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 23);
+            this.textBox1.TabIndex = 1;
+            // 
             // OyuncularForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dgvOyuncular);
             this.Name = "OyuncularForm";
             this.Text = "OyuncularForm";
             ((System.ComponentModel.ISupportInitialize)(this.dgvOyuncular)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -98,5 +109,6 @@
         private DataGridViewTextBoxColumn AdSoyAd;
         private DataGridViewTextBoxColumn Adres;
         private DataGridViewTextBoxColumn Telefon;
+        private TextBox textBox1;
     }
 }
